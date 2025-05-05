@@ -1,6 +1,6 @@
 .direnv
 .fzf-history
-main
+.main
 
 dist
 dist-*

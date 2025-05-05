@@ -4,15 +4,15 @@
 verify:
     #!/usr/bin/env bash
     file="$(basename "$(ls app/*.hs | fzf --history .fzf-history)")"
-    touch "app/$file" # -j 8
-    oj-verify run "app/$file" # -j 8
+    touch "app/$file"
+    oj-verify run "app/$file" -j 8
 
 [private]
 alias v := verify
 
 # runs local test for all of the online judge problems
 verify-all:
-    touch app/* && oj-verify run app/*.hs
+    touch app/* && oj-verify run app/*.hs -j 8
 
 [private]
 alias va := verify-all

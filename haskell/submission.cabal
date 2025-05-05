@@ -21,6 +21,8 @@ flag atcoder
     manual:         True
 
 common deps
+    exposed-modules:
+      Util
     build-depends:
                   Cabal ^>=3.14.2.0,
                   Cabal-syntax ^>=3.14.2.0,
