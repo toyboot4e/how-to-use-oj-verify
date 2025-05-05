@@ -61,6 +61,8 @@
             ];
 
             packages = [
+	      just
+	      fzf
               online-judge-tools
               oj-verify
 
