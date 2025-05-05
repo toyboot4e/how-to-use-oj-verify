@@ -1,0 +1,18 @@
+# Just a task runner: https://github.com/casey/just
+
+# runs local test for a online judge problem
+verify:
+    #!/usr/bin/env bash
+    file="$(basename "$(ls app/*.hs | fzf --history .fzf-history)")"
+    touch "app/$file" # -j 8
+    oj-verify run "app/$file" # -j 8
+
+[private]
+alias v := verify
+
+# runs local test for all of the online judge problems
+verify-all:
+    touch app/* && oj-verify run app/*.hs
+
+[private]
+alias va := verify-all
